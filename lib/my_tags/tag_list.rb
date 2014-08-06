@@ -1,4 +1,4 @@
-class MyTags::Tags
+Class MyTags::TagList
 
   include Enumerable
 
@@ -48,3 +48,4 @@ class MyTags::Tags
 
   attr_reader :taggable
 end
+

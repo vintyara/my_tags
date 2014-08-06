@@ -4,14 +4,14 @@ module MyTags::ActiveRecord
   end
 
   def tags
-    @tags ||= MyTags::Tags.new self
+    @tags ||= MyTags::TagList.new self
   end
 
   def tags=(names)
-    if names.is_a?(MyTags::Tags)
+    if names.is_a?(MyTags::TagList)
       @tag_names = names
     else
-      @tag_names = MyTags::Tags.new_with_names self, names
+      @tag_names = MyTags::TagList.new_with_names self, names
     end
   end
 
