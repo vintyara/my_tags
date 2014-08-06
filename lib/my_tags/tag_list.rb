@@ -1,4 +1,4 @@
-Class MyTags::TagList
+class MyTags::TagList
 
   include Enumerable
 

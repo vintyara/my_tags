@@ -3,16 +3,12 @@ module MyTags::ActiveRecord
     base.extend MyTags::ActiveRecord::ClassMethods
   end
 
-  def tags
-    @tags ||= MyTags::TagList.new self
+  def tag_list
+    @tag_list ||= MyTags::TagList.new self
   end
 
-  def tags=(names)
-    if names.is_a?(MyTags::TagList)
-      @tag_names = names
-    else
-      @tag_names = MyTags::TagList.new_with_names self, names
-    end
+  def tag_list=(names)
+    @tag_names = names.is_a?(MyTags::TagList) ? names : MyTags::TagList.new_with_names(self, names)
   end
 
   module ClassMethods
