@@ -1,37 +1,40 @@
-Simple gem for Tags
+## Simple gem for Tags
 
-Examples:
+###Allow add Tags for any model
 
-Gemfile:
-  `gem 'my_tags'`
+#####Examples:
 
-Your model, witch will be use Tags
-`class Post < ActiveRecord::Base
-  has_many_tags`
+Add `gem 'my_tags'` to Gemfile
 
+Add `has_many_tags` for model, which you want to use tags
+
+```
+class Post < ActiveRecord::Base
+has_many_tags
+```
+
+###### Done, ready for using:
 
 post = Post.create(name: 'Post with tags')
+
 post.tags => []
+
 post.tags.count => 0
 
 post.tag_list << 'First tag'
+
 post.tags.count => 1
+
 post.tags.first.delete
+
 post.tags.count => 0
 
 
-===
+### UI features:
 
-UI
-
-add to Routes.rb
-
-mount MyTags::Engine, at: "/my_tags"
+Add to Routes.rb `mount MyTags::Engine, at: "/my_tags"`
 
 
-add to your applications.js:
+Add to your applications.js: `//= require my_tags`
 
-//= require my_tags
-
-
-= tags_field_tag(@post)
+Use `= tags_field_tag(@post)` helpers method in views (it draw input field with autocompete popup)
