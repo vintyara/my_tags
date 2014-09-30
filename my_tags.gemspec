@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'my_tags'
-  s.version     = '0.0.8'
+  s.version     = '0.0.9'
   s.authors     = ['Vitaly Omelchenko']
   s.email       = ['prosto.vint@gmail.com']
   s.homepage    = 'https://github.com/vintyara/my_tags'
