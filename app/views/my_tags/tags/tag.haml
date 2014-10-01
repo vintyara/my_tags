@@ -1,0 +1,4 @@
+%h3= t('my_tags.taggables_list_header', tag: params[:tag])
+
+-@taggables.each do |taggable|
+  =link_to "#{taggable.class.to_s}: #{taggable.name}", eval("#{taggable.class.to_s.downcase}_path(#{taggable.id})")

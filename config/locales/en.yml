@@ -1,0 +1,3 @@
+en:
+  my_tags:
+    taggables_list_header: "Relative articles with '%{tag}' tag"

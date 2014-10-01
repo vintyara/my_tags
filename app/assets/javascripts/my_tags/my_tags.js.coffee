@@ -1,6 +1,6 @@
 ready = ->
-  if $('.taggable').length
-    $('.taggable').keyup (elm) ->
+  if $('.my_taggable').length
+    $('.my_taggable').keyup (elm) ->
       tags_separator = ','
 
       # Search by last separated word
@@ -38,7 +38,7 @@ tags_list_popup = (tag_list, object) ->
       .addClass('ui-all')
       .text(tag.name)
       .appendTo(li)
-    a.click ->
+    li.click ->
       already_filled_in_tags = $(object).val().split(',')
       already_filled_in_tags.pop()
       already_filled_in_tags.push(tag.name + ', ')
