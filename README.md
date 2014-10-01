@@ -2,7 +2,7 @@
 
 ###Allow add Tags for any model
 
-#####Examples:
+#####Installation:
 
 Add `gem 'my_tags'` to Gemfile
 
@@ -13,7 +13,7 @@ class Post < ActiveRecord::Base
 has_many_tags
 ```
 
-Run rake `my_tags:install:migrations` and `rake:db:migrate`
+Run `rake my_tags:install:migrations` and `rake:db:migrate`
 
 Done!
 
@@ -43,6 +43,8 @@ Or you can use this method:
 Add to Routes.rb `mount MyTags::Engine, at: "/my_tags"`
 
 
-Add to your applications.js: `//= require my_tags`
+Add to your applications.js: `//= require my_tags`, applications.css: `//= require my_tags`
 
 Use `= tags_field_tag(@post)` helpers method in views (it draw input field with autocompete popup)
+
+`= all_tags` method for display all tags
