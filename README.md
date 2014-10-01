@@ -13,6 +13,10 @@ class Post < ActiveRecord::Base
 has_many_tags
 ```
 
+Run rake `my_tags:install:migrations` and `rake:db:migrate`
+
+Done!
+
 ###### Done, ready for using:
 
 post = Post.create(name: 'Post with tags')
@@ -28,6 +32,10 @@ post.tags.count => 1
 post.tags.first.delete
 
 post.tags.count => 0
+
+Or you can use this method:
+
+`@post.process_tags('animals, pets')` or `@post.process_tags(['animals', ['pets'])` 
 
 
 ### UI features:
